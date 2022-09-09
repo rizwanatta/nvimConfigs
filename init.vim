@@ -30,8 +30,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'prettier/vim-prettier',{ 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'dense-analysis/ale' " enables prettier and eslint
 Plug 'preservim/nerdcommenter'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'overcache/NeoSolarized'
 call plug#end()
 
 filetype plugin on
@@ -65,3 +67,8 @@ let g:ale_virtualtext_cursor = 1
 let g:ale_virtualtext_prefix = "🔥 "
 
 let g:ale_fix_on_save = 1
+
+" remaps for FZF
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-e> :History<CR>
+" remaps for resizing windows in tmux
